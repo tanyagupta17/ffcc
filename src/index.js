@@ -84,42 +84,7 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     }, function allDone (err) {
         // this will be called when all the updates are done or an error occurred during the iteration
     });
-
-    
-    // mr = db.runCommand({
-    //     "mapreduce": "user",
-    //     "map": function() {
-    //         var regxp = /\s/;
-    //         for (var key in this) { 
-    //             if (key.match(regxp)) {
-    //                 emit(key, null); 
-    //             }
-    //         }
-    //     },
-    //     "reduce": function() {}, 
-    //     "out": "filtered_keys"
-    // })
-    
-    // db[mr.result].distinct("_id")
-    
-    // var update = { "$rename": {} };
-    // db[mr.result].distinct("_id").forEach(function (key){
-    //     update["$rename"][key] = key.replace(/\s+/g, "_");
-    // });
-    
-    // //print(update)
-    
-    // db.user.update({ }, update, false, true );
-    
-        
-
-    
-    })
-  
-
-
-
-
+  })
 
 
 app.listen(port, () => {
